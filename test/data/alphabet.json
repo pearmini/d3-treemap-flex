@@ -1,0 +1,29 @@
+{
+  "name": "alphabet",
+  "children": [
+    { "name": "a" },
+    {
+      "name": "group",
+      "children": [
+        {
+          "name": "group",
+          "count": 2,
+          "children": [{ "name": "h" }, { "name": "i" }, { "name": "j" }, { "name": "k" }]
+        },
+        { "name": "g" }
+      ]
+    },
+    {
+      "name": "group",
+      "children": [
+        { "name": "l" },
+        { "name": "m" },
+        { "name": "n" },
+        { "name": "o" },
+        { "name": "p" },
+        { "name": "q" },
+        { "name": "r" }
+      ]
+    }
+  ]
+}
