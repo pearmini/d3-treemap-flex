@@ -14,7 +14,6 @@ export function treemapFlex() {
     const c = count(parent);
     const n = nodes.length;
     const m = Math.ceil(n / c);
-    (direction(parent) === "row" ? dice : slice)();
 
     function dice() {
       const t = (((x1 - x0) / c) * n) / f;
@@ -41,6 +40,8 @@ export function treemapFlex() {
         node.y1 = y += F[k] * t;
       }
     }
+
+    (direction(parent) === "row" ? dice : slice)();
   }
 
   partition.direction = function (x) {
