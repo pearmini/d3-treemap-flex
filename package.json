@@ -34,11 +34,12 @@
     "test:js": "vitest",
     "test:lint": "eslint src test",
     "test:format": "prettier --check src test",
-    "build": "rm -rf dist && rollup -c"
+    "build": "rm -rf dist && rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "d3-hierarchy": "^3.1.2",
-    "eslint": "^9.0.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.5",
     "rollup": "^4.14.3",

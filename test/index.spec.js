@@ -1,7 +1,7 @@
 import { it, expect } from "vitest";
 import { readFileSync } from "fs";
 import { treemap, hierarchy } from "d3-hierarchy";
-import { treemapFlex, directionColumnFirst, directionRowFirst } from "../src/index.js";
+import { treemapFlex, directionSliceDice, directionDiceSlice } from "../src/index.js";
 import { countAll } from "../src/countAll.js";
 import { round } from "./round.js";
 
@@ -9,7 +9,7 @@ const alphabet = JSON.parse(readFileSync("./test/data/alphabet.json"));
 
 it("treemapFlex() has the expected defaults", () => {
   const t = treemapFlex();
-  expect(t.direction()).toBe(directionColumnFirst);
+  expect(t.direction()).toBe(directionSliceDice);
   expect(t.count()).toBe(countAll);
 });
 
@@ -68,8 +68,8 @@ it("treemapFlex should observe constant direction", () => {
 });
 
 it("treemapFlex should observe the specified functional direction", () => {
-  const tile = treemapFlex().direction(directionRowFirst);
-  expect(tile.direction()).toBe(directionRowFirst);
+  const tile = treemapFlex().direction(directionDiceSlice);
+  expect(tile.direction()).toBe(directionDiceSlice);
 
   const t = treemap().size([640, 640]).tile(tile).round(true);
   const root = t(hierarchy(alphabet));

@@ -1,3 +1,3 @@
-export { treemapFlex } from "./flex.js";
-export { directionColumnFirst } from "./directionColumnFirst.js";
-export { directionRowFirst } from "./directionRowFirst.js";
+export { treemapFlex } from "./treemapFlex.js";
+export { directionSliceDice } from "./directionSliceDice.js";
+export { directionDiceSlice } from "./directionDiceSlice.js";
