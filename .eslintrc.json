@@ -9,6 +9,7 @@
     "sourceType": "module",
     "ecmaVersion": "latest"
   },
+  "ignorePatterns": ["rollup.config.js"],
   "rules": {
     "no-dupe-keys": "off",
     "no-constant-condition": "off"
