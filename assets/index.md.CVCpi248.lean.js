@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a5 as r}from"./chunks/framework.C0knCAcL.js";const _=JSON.parse('{"title":"d3-treemap-flex","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),i={name:"index.md"},l=r("",7),o=[l];function s(n,d,h,c,m,p){return t(),a("div",null,o)}const u=e(i,[["render",s]]);export{_ as __pageData,u as default};
