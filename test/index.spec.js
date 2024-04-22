@@ -2,7 +2,7 @@ import { it, expect } from "vitest";
 import { readFileSync } from "fs";
 import { treemap, hierarchy } from "d3-hierarchy";
 import { treemapFlex, directionSliceDice, directionDiceSlice } from "../src/index.js";
-import { countAll } from "../src/countAll.js";
+import { nowrap } from "../src/nowrap.js";
 import { round } from "./round.js";
 
 const alphabet = JSON.parse(readFileSync("./test/data/alphabet.json"));
@@ -10,7 +10,7 @@ const alphabet = JSON.parse(readFileSync("./test/data/alphabet.json"));
 it("treemapFlex() has the expected defaults", () => {
   const t = treemapFlex();
   expect(t.direction()).toBe(directionSliceDice);
-  expect(t.count()).toBe(countAll);
+  expect(t.warp()).toBe(nowrap);
 });
 
 it("treemapFlex should compute the expected layout", () => {
@@ -45,7 +45,7 @@ it("treemapFlex should observe constant direction", () => {
   const t = treemap().size([640, 640]).tile(tile).round(true);
   const root = t(hierarchy(alphabet));
   const nodes = root.descendants().map(round);
-  console.log(JSON.stringify(nodes));
+
   expect(nodes).toEqual([
     { x0: 0, y0: 0, x1: 640, y1: 640 },
     { x0: 0, y0: 0, x1: 213, y1: 640 },
@@ -95,9 +95,9 @@ it("treemapFlex should observe the specified functional direction", () => {
   ]);
 });
 
-it("treemapFlex should observe the specified constant count", () => {
-  const tile = treemapFlex().count(2);
-  expect(tile.count()()).toBe(2);
+it("treemapFlex should observe the specified constant warp", () => {
+  const tile = treemapFlex().warp(2);
+  expect(tile.warp()()).toBe(2);
 
   const t = treemap().size([640, 640]).tile(tile).round(true);
   const root = t(hierarchy(alphabet));
@@ -123,10 +123,10 @@ it("treemapFlex should observe the specified constant count", () => {
   ]);
 });
 
-it("treemapFlex should observe the specified functional count", () => {
+it("treemapFlex should observe the specified functional warp", () => {
   const two = () => 2;
-  const tile = treemapFlex().count(two);
-  expect(tile.count()).toBe(two);
+  const tile = treemapFlex().warp(two);
+  expect(tile.warp()).toBe(two);
 
   const t = treemap().size([640, 640]).tile(tile).round(true);
   const root = t(hierarchy(alphabet));
