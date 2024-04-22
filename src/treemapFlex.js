@@ -1,17 +1,17 @@
 import { sum } from "./sum.js";
 import { constant } from "./constant.js";
 import { directionSliceDice } from "./directionSliceDice.js";
-import { countAll } from "./countAll.js";
+import { nowrap } from "./nowrap.js";
 
 export function treemapFlex() {
   let direction = directionSliceDice;
-  let count = countAll;
+  let warp = nowrap;
 
   function partition(parent, x0, y0, x1, y1) {
     const nodes = parent.children;
     const F = nodes.map((d) => d.value ?? 1);
     const f = sum(F);
-    const c = count(parent);
+    const c = warp(parent);
     const n = nodes.length;
     const m = Math.ceil(n / c);
 
@@ -48,8 +48,8 @@ export function treemapFlex() {
     return arguments.length ? ((direction = typeof x === "function" ? x : constant(x)), partition) : direction;
   };
 
-  partition.count = function (x) {
-    return arguments.length ? ((count = typeof x === "function" ? x : constant(+x)), partition) : count;
+  partition.warp = function (x) {
+    return arguments.length ? ((warp = typeof x === "function" ? x : constant(+x)), partition) : warp;
   };
 
   return partition;
