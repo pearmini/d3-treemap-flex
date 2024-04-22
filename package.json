@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "The tiling method for d3-treemap to plot block diagrams.",
   "type": "module",
+  "packageManager": "pnpm@8.15.3",
   "main": "src/index.js",
   "module": "src/index.js",
   "homepage": "https://github.com/pearmini/d3-treemap-flex",
@@ -30,16 +31,16 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "test": "npm run test:lint && npm run test:format && npm run test:js",
+    "test": "pnpm run test:lint && pnpm run test:format && pnpm run test:js",
     "test:js": "vitest",
     "test:lint": "eslint src test",
     "test:format": "prettier --check src test",
     "build": "rm -rf dist && rollup -c",
-    "prepublishOnly": "npm run build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "docs:deploy": "npm run docs:build && gh-pages -d docs/.vitepress/dist"
+    "docs:deploy": "pnpm run docs:build && gh-pages -d docs/.vitepress/dist",
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
     "d3-hierarchy": "^3.1.2",
