@@ -10,7 +10,7 @@ const alphabet = JSON.parse(readFileSync("./test/data/alphabet.json"));
 it("treemapFlex() has the expected defaults", () => {
   const t = treemapFlex();
   expect(t.direction()).toBe(directionSliceDice);
-  expect(t.warp()).toBe(nowrap);
+  expect(t.wrap()).toBe(nowrap);
 });
 
 it("treemapFlex should compute the expected layout", () => {
@@ -95,9 +95,9 @@ it("treemapFlex should observe the specified functional direction", () => {
   ]);
 });
 
-it("treemapFlex should observe the specified constant warp", () => {
-  const tile = treemapFlex().warp(2);
-  expect(tile.warp()()).toBe(2);
+it("treemapFlex should observe the specified constant wrap", () => {
+  const tile = treemapFlex().wrap(2);
+  expect(tile.wrap()()).toBe(2);
 
   const t = treemap().size([640, 640]).tile(tile).round(true);
   const root = t(hierarchy(alphabet));
@@ -123,10 +123,10 @@ it("treemapFlex should observe the specified constant warp", () => {
   ]);
 });
 
-it("treemapFlex should observe the specified functional warp", () => {
+it("treemapFlex should observe the specified functional wrap", () => {
   const two = () => 2;
-  const tile = treemapFlex().warp(two);
-  expect(tile.warp()).toBe(two);
+  const tile = treemapFlex().wrap(two);
+  expect(tile.wrap()).toBe(two);
 
   const t = treemap().size([640, 640]).tile(tile).round(true);
   const root = t(hierarchy(alphabet));

@@ -5,13 +5,13 @@ import { nowrap } from "./nowrap.js";
 
 export function treemapFlex() {
   let direction = directionSliceDice;
-  let warp = nowrap;
+  let wrap = nowrap;
 
   function partition(parent, x0, y0, x1, y1) {
     const nodes = parent.children;
     const F = nodes.map((d) => d.value ?? 1);
     const f = sum(F);
-    const c = warp(parent);
+    const c = wrap(parent);
     const n = nodes.length;
     const m = Math.ceil(n / c);
 
@@ -48,8 +48,8 @@ export function treemapFlex() {
     return arguments.length ? ((direction = typeof x === "function" ? x : constant(x)), partition) : direction;
   };
 
-  partition.warp = function (x) {
-    return arguments.length ? ((warp = typeof x === "function" ? x : constant(+x)), partition) : warp;
+  partition.wrap = function (x) {
+    return arguments.length ? ((wrap = typeof x === "function" ? x : constant(+x)), partition) : wrap;
   };
 
   return partition;
