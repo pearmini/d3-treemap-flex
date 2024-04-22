@@ -7,7 +7,7 @@
       "children": [
         {
           "name": "group",
-          "warp": 2,
+          "wrap": 2,
           "children": [{ "name": "h" }, { "name": "i" }, { "name": "j" }, { "name": "k" }]
         },
         { "name": "g" }
