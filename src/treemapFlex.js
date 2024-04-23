@@ -9,7 +9,7 @@ export function treemapFlex() {
 
   function partition(parent, x0, y0, x1, y1) {
     const nodes = parent.children;
-    const F = nodes.map((d) => d.value ?? 1);
+    const F = nodes.map((d) => d.value ?? d.data.value ?? 1);
     const f = sum(F);
     const c = wrap(parent);
     const n = nodes.length;

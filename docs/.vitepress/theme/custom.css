@@ -1,0 +1,20 @@
+/* https://github.com/d3/d3/blob/main/docs/.vitepress/theme/custom.css */
+
+:root {
+  --vp-c-orange-1: #e04600;
+  --vp-c-orange-2: #e85d14;
+  --vp-c-orange-3: #ef7234;
+  --vp-c-orange-soft: rgba(239, 114, 52, 0.16);
+  --vp-c-brand-1: var(--vp-c-orange-1);
+  --vp-c-brand-2: var(--vp-c-orange-2);
+  --vp-c-brand-3: var(--vp-c-orange-3);
+  --vp-c-brand-soft: var(--vp-c-orange-soft);
+  --vp-c-brand: var(--vp-c-brand-3);
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu,
+    roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+:root.dark {
+  --vp-c-orange-1: #ff9852;
+  --vp-c-orange-2: #ff823e;
+}
