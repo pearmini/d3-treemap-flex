@@ -6,8 +6,10 @@ export default defineConfig({
   extends: config,
   base: "/d3-treemap-flex/",
   cleanUrls: true,
-  head: [["link", { rel: "icon", type: "image/png", href: "/logo.svg" }]],
+  head: [["link", { rel: "icon", type: "image/png", href: "/d3-treemap-flex/logo.svg" }]],
   themeConfig: {
+    logo: "/logo.svg",
+    outline: { level: [2, 3] },
     socialLinks: [{ icon: "github", link: "https://github.com/pearmini/d3-treemap-flex" }],
   },
 });
