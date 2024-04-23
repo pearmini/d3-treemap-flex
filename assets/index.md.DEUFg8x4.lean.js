@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a5 as e}from"./chunks/framework.Bbq3GMR-.js";const o=JSON.parse('{"title":"d3-treemap-flex","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),t={name:"index.md"},n=e("",44),h=[n];function l(p,k,r,d,E,g){return a(),i("div",null,h)}const y=s(t,[["render",l]]);export{o as __pageData,y as default};
