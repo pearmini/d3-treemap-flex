@@ -22,7 +22,7 @@ const data = {
         { name: "b", value: 2 },
         { name: "c", value: 1 },
         { name: "d", value: 1 },
-        { name: "d", value: 2 },
+        { name: "e", value: 2 },
       ],
     },
   ],
