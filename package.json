@@ -1,6 +1,6 @@
 {
   "name": "d3-treemap-flex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The tiling method for d3-treemap to plot block diagrams.",
   "type": "module",
   "packageManager": "pnpm@8.15.3",
