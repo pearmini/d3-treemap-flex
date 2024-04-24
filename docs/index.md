@@ -37,7 +37,7 @@ const treemap = d3.treemap().size([width, height]).tile(d3.treemapFlex()).paddin
 
 ## Resources
 
-- [Releases](https://github.com/d3/d3-treemap-flex/releases)
+- [Releases](https://github.com/pearmini/d3-treemap-flex/releases)
 - [Getting help](https://github.com/pearmini/d3-treemap-flex/discussions)
 
 ## Installing
